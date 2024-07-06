@@ -1,0 +1,76 @@
+/* Importing Font Awesome for icons */
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+
+/* Styling for navbar links */
+.navbar-tab {
+    color: rgba(240, 248, 255, 0.608);  
+    margin-right: 55px;
+    font-size: 20px;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    margin-top: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styling for navbar brand title */
+.navbar-title {
+    color: rgba(255, 255, 255, 0.691);
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Hover effect for navbar brand title */
+.navbar-title:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Hover effect for navbar tabs */
+.navbar-tab:hover {
+    color: aliceblue;
+}
+
+/* Styling for the first letter in the brand title */
+.name-title {
+    color: rgb(164, 147, 16);
+}
+
+/* Container for the navbar tabs */
+.navbar-tab-body {
+    left: 100px;
+}
+
+/* Active state styling for navbar tabs */
+.navbar-tab:active, .navbar-tab.active {
+    color: rgba(255, 255, 255, 0.691);
+}
+
+/* Adding padding to the navbar for better spacing */
+.navbar-body {
+    padding: 10px 20px;
+}
+
+/* Making sure the navbar brand and tabs are vertically centered */
+.navbar-body .navbar-brand, 
+.navbar-body .nav-link {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .navbar-title {
+        padding-right: 100px;
+        
+    }
+    .navbar-toggler {
+        border-color: rgba(178, 34, 34, 0);
+        margin-top: 15px;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* White icon */
+    }
+}
