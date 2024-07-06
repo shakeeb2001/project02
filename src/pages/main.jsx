@@ -5,6 +5,7 @@ import Hotel from '../images/hotel.png';
 import Lab from '../images/lab.png';
 import Wine from '../images/wine.png';
 import Footer from '../components/footer';
+import Bubbles from '../pages/bubble';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -40,6 +41,7 @@ export default function Main() {
 
   return (
     <>
+      <Bubbles />
       <div id='home' className="container1">
         <h2 className="greeting">Hi I'm <span className='firstname'>Shakeeb</span> Jasim</h2>
         <h3 className='role'><br />Software Developer | Data Analyst | UI/UX Designer</h3>
@@ -108,9 +110,6 @@ export default function Main() {
           <div className='card project-card'>
              <h3 className='project-title'>Red Wine Quality Prediction System</h3> 
              <p className='project-description'>Technologies - HTML5, CSS3, JavaScript, ReactJs,Node JS,Firebase, ML,Flask.<br/><br/>
-  
-
-
              The Red Wine Quality Prediction system is a web-based application that predicts the quality of red wine, providing a score to help wine stores and testing labs efficiently assess wine quality.</p> 
              <img src={Wine} alt="Profile" className="project-img"/>
           </div>
