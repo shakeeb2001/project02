@@ -16,6 +16,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .firstname {
@@ -119,12 +121,14 @@ body {
   font-size: 18px;
   line-height: 1.6;
   color: rgb(194, 193, 193);
+  
   text-align: justify; /* Justify text alignment */
 }
 
 .aboutme {
   color: #ffffff;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
+
 }
 
 /* Styles for the cards */
@@ -150,8 +154,8 @@ body {
 .project-main-title{
   font-size: 36px;
   font-weight: 700;
-  margin-top:170px;
-  margin-bottom: 40px;
+  margin-top:150px;
+
   color: rgb(194, 193, 193);
   text-align: center;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
@@ -220,7 +224,7 @@ body {
   width: 90%;
   max-width: 400px;
   border-radius: 5%; 
-  margin-top: -320px;
+  margin-top: -350px;
   
 }
 .project-description{
@@ -242,7 +246,7 @@ body {
     font-size: 20px;
   }
   .role {
-    font-size: 15px;
+    font-size: 10px;
     text-align: center;
   }
   
@@ -258,11 +262,12 @@ body {
   }
   .profile-image {
     width: 100%;
-    max-width: 200px;
+    max-width: 250px;
   }
   .right-panel {
     padding-left: 0;
     text-align: center;
+    padding: 15px;
   }
   .right-panel h3 {
     font-size: 24px;
@@ -309,6 +314,7 @@ body {
   .project-description {
     width: 100%;
     margin-left: 0;
+    text-align: center;
   }
   .project-img {
     width: 100%;

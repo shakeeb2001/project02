@@ -47,7 +47,7 @@ export default function Main() {
           <a href="https://www.linkedin.com/in/shjasim/" target="_blank" rel="noopener noreferrer" className="btn linkedin">
             <i className="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="/path/to/your_cv.pdf" download className="btn cv">
+          <a href="src/images/Resume.pdf" download className="btn cv">
             <i className="fas fa-download"></i> Download CV
           </a>
         </div>
@@ -59,10 +59,7 @@ export default function Main() {
         <div className="right-panel">
           <h3 className='aboutme'>About Me</h3>
           <p>
-          I am Shakeeb Jasim, a dedicated and passionate Software Developer with extensive expertise in 
-          Data Analysis and UI/UX Design. With a Bachelor's Hons in Computer Science from the
-           University of Plymouth, where I graduated with a Second Class Upper Division, 
-          I have honed my skills in developing innovative solutions and delivering high-quality software. My experience includes tackling complex problems, continuously seeking to enhance my knowledge, and driving improvements in software development processes. My goal is to leverage my skills and experience to contribute effectively to cutting-edge projects and advance my career in software development.
+          I'm Shakeeb Jasim, a dedicated and passionate Software Developer with extensive expertise in Data Analysis and UI/UX Design. I have honed my skills in developing innovative solutions and delivering high-quality software. My experience includes tackling complex problems, continuously seeking to enhance my knowledge, and driving improvements in software development processes. My goal is to leverage my skills and experience to contribute effectively to cutting-edge projects and advance my career in software development.
           </p>
         </div>
       </div>
@@ -92,7 +89,7 @@ export default function Main() {
           </div>
           <div className="title">Mobile App Development</div>
           <div className="description">
-            I analyze data to extract valuable insights and drive decision-making. My skills include data visualization, statistical analysis, and machine learning.
+          I specialize in developing mobile applications using React Native, leveraging its capabilities to create high-quality, performant apps for both iOS and Android platforms
           </div>
         </div>
       </div>
@@ -102,7 +99,7 @@ export default function Main() {
       <div id="project" className='container4'>
           <div className='card project-card'>
              <h3 className='project-title'>Cardiovascular Disease Risk Prediction System</h3> 
-             <p className='project-description'>Technologies -HTML5, CSS3, JavaScript, MERN Stack, ML,Flask.<br/>
+             <p className='project-description'>Technologies -HTML5, CSS3, JavaScript, MERN Stack, ML,Flask.<br/><br/>
                    The final year computing project has been completed, entailing the
                    development of a system capable of predicting cardiovascular disease
                    risk levels using machine learning techniques.</p> 
@@ -110,19 +107,17 @@ export default function Main() {
           </div>
           <div className='card project-card'>
              <h3 className='project-title'>Red Wine Quality Prediction System</h3> 
-             <p className='project-description'>Technologies - HTML5, CSS3, JavaScript, ReactJs,Node JS,Firebase, ML,Flask.<br/>
-               The Red Wine Quality Prediction system is a web-based application
-               designed for wine stores and wine quality testing labs. It predicts the
-               quality of red wine by providing a score, helping users assess the
-               wine's quality efficiently.</p> 
+             <p className='project-description'>Technologies - HTML5, CSS3, JavaScript, ReactJs,Node JS,Firebase, ML,Flask.<br/><br/>
+  
+
+
+             The Red Wine Quality Prediction system is a web-based application that predicts the quality of red wine, providing a score to help wine stores and testing labs efficiently assess wine quality.</p> 
              <img src={Wine} alt="Profile" className="project-img"/>
           </div>
           <div className='card project-card'>
              <h3 className='project-title'>Hotel Willow Lack Room Reservation System</h3> 
-             <p className='project-description'>Technologies - HTML5, CSS3, JavaScript, MERN Stack<br/>
-                          Willow Lack, an innovative hotel booking system designed to
-                          streamline the reservation process for both individual room bookings
-                          and event-related hotel accommodations.</p> 
+             <p className='project-description'>Technologies - HTML5, CSS3, JavaScript, MERN Stack<br/><br/>
+              Willow Lack is an innovative hotel booking system designed to streamline the reservation process for both individual room bookings and event-related hotel accommodations.</p> 
              <img src={Hotel} alt="Profile" className="project-img"/>
           </div>
       </div>
