@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #fafafa;
+  --purple: #6322f5;
+  --purple-light: #8b5cf6;
+  --surface: #0c0c0c;
+  --muted: #a1a1aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-purple: var(--purple);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(99, 34, 245, 0.4);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple);
+}
+
+/* Hero portrait — static halftone dot watermark */
+.hero-watermark-fade {
+  mask-image: linear-gradient(to bottom, black 25%, transparent 96%);
+  -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 96%);
+}
+
+.hero-watermark-dots {
+  opacity: 0.88;
+  filter: grayscale(100%) contrast(1.7) brightness(1.75);
+  mask-image: radial-gradient(circle, #000 0.4px, transparent 0.4px);
+  -webkit-mask-image: radial-gradient(circle, #000 0.4px, transparent 0.4px);
+  mask-size: 2px 2px;
+  -webkit-mask-size: 2px 2px;
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+}
+
+/* Brighter on small screens where image reads darker */
+@media (max-width: 767px) {
+  .hero-watermark-dots {
+    opacity: 0.92;
+    filter: grayscale(100%) contrast(1.6) brightness(1.9);
+  }
+
+  .hero-watermark-fade {
+    mask-image: linear-gradient(to bottom, black 20%, transparent 98%);
+    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 98%);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-watermark-dots {
+    opacity: 0.9;
+    filter: grayscale(100%) contrast(1.65) brightness(1.85);
+    mask-size: 2.5px 2.5px;
+    -webkit-mask-size: 2.5px 2.5px;
+  }
+
 }
