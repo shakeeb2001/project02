@@ -11,7 +11,7 @@ function LetterGlow({ children }: { children: string }) {
   return (
     <span className="relative inline-block">
       <span
-        className="pointer-events-none absolute -left-2 top-1/2 -z-10 h-[0.85em] w-[0.85em] -translate-y-1/2 rounded-full bg-[#6322f5] opacity-90 blur-[32px] sm:blur-[40px] md:h-[1em] md:w-[1em] md:blur-[52px]"
+        className="pointer-events-none absolute -left-2 top-1/2 -z-10 h-[0.85em] w-[0.85em] -translate-y-1/2 rounded-full bg-[#8b5cf6] opacity-100 blur-[36px] sm:blur-[44px] md:h-[1em] md:w-[1em] md:bg-[#6322f5] md:opacity-90 md:blur-[52px]"
         aria-hidden
       />
       <span
@@ -147,39 +147,45 @@ export function Hero() {
         </div>
 
         {/* Hero stage */}
-        <div className="relative z-10 flex min-h-[340px] flex-1 flex-col px-4 py-2 sm:min-h-[380px] sm:px-5 sm:py-4 md:min-h-0 md:justify-center md:px-8">
-          {/* Name */}
-          <div className="relative z-[2] shrink-0">
-            <h1 className="flex flex-col items-center text-center font-[family-name:var(--font-space-grotesk)] text-[clamp(2.25rem,12vw,4rem)] font-black leading-[0.95] tracking-tight text-white sm:text-[clamp(2.5rem,11vw,4.5rem)] md:flex-row md:items-center md:justify-between md:text-left md:text-[clamp(3rem,10.5vw,8.5rem)]">
-              <span>
-                <LetterGlow>S</LetterGlow>hakeeb
-              </span>
-              <span>
-                Jasi<LetterGlow>m</LetterGlow>
-              </span>
-            </h1>
-          </div>
-
-          {/* Portrait zone — hover to reveal full image */}
-          <div className="relative z-[1] flex flex-1 items-end justify-center md:absolute md:inset-0 md:items-center md:pb-0">
+        <div className="relative z-10 min-h-[min(78vh,600px)] flex-1 px-4 md:flex md:min-h-0 md:flex-col md:justify-center md:px-8 md:py-4">
+          {/* Portrait — larger on mobile, anchored bottom */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 z-[1] flex items-end justify-center md:absolute md:inset-0 md:items-center">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="hero-watermark-fade translate-y-6 sm:translate-y-8 md:translate-x-12 md:translate-y-10 lg:translate-x-16 lg:translate-y-12"
+              className="hero-watermark-fade translate-y-2 sm:translate-y-4 md:translate-x-12 md:translate-y-10 lg:translate-x-16 lg:translate-y-12"
               aria-hidden
             >
-              <div className="hero-watermark-dots relative h-[min(38vh,320px)] w-[min(72vw,280px)] sm:h-[min(42vh,360px)] sm:w-[min(68vw,320px)] md:h-[min(84vh,780px)] md:w-[min(54vw,560px)] lg:h-[min(88vh,860px)] lg:w-[min(50vw,620px)]">
+              <div className="hero-watermark-dots relative h-[min(62vh,560px)] w-[min(96vw,460px)] sm:h-[min(65vh,600px)] sm:w-[min(94vw,480px)] md:h-[min(90vh,860px)] md:w-[min(60vw,640px)] lg:h-[min(94vh,940px)] lg:w-[min(58vw,720px)]">
                 <Image
                   src="/office_profile-removebg-preview.png"
                   alt=""
-                    fill
-                    className="object-contain object-bottom"
-                    priority
-                    sizes="(max-width: 768px) 320px, 620px"
-                  />
+                  fill
+                  className="object-contain object-bottom md:object-center"
+                  priority
+                  sizes="(max-width: 768px) 480px, 720px"
+                />
               </div>
             </motion.div>
+          </div>
+
+          {/* Name — lower portrait on mobile + tagline; top row on desktop */}
+          <div className="absolute inset-x-4 bottom-[clamp(2.75rem,11vh,5.25rem)] z-[2] sm:inset-x-5 sm:bottom-[clamp(3rem,12vh,5.5rem)] md:relative md:inset-x-0 md:bottom-auto md:shrink-0">
+            <h1 className="hero-name-glow text-center font-[family-name:var(--font-space-grotesk)] text-[clamp(1.85rem,9vw,2.75rem)] font-black leading-[0.95] tracking-tight text-white sm:text-[clamp(2.1rem,9.5vw,3rem)] md:hidden">
+              <LetterGlow>S</LetterGlow>hakeeb Jasi<LetterGlow>m</LetterGlow>
+            </h1>
+            <h1 className="hidden w-full flex-row items-center justify-between gap-2 font-[family-name:var(--font-space-grotesk)] text-[clamp(3rem,10.5vw,8.5rem)] font-black leading-[0.95] tracking-tight text-white md:flex">
+              <span className="shrink-0">
+                <LetterGlow>S</LetterGlow>hakeeb
+              </span>
+              <span className="shrink-0 text-right">
+                Jasi<LetterGlow>m</LetterGlow>
+              </span>
+            </h1>
+            <p className="hero-name-glow mt-2.5 text-center text-[11px] font-medium tracking-wide text-zinc-300 sm:mt-3 sm:text-xs md:hidden">
+              {personal.mobileHeroTagline}
+            </p>
           </div>
         </div>
 

@@ -3,6 +3,8 @@ export const personal = {
   firstName: "Shakeeb",
   lastName: "Jasim",
   title: "Developer",
+  /** Shown under the hero name on mobile only */
+  mobileHeroTagline: "Developer | UI/UX Designer",
   role: "Junior Backend Developer",
   location: "Colombo, Sri Lanka",
   email: "shakeebjasim.mail@gmail.com",

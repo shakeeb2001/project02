@@ -87,5 +87,15 @@ body {
     mask-size: 2.5px 2.5px;
     -webkit-mask-size: 2.5px 2.5px;
   }
+}
 
+/* Hero name — purple glow on text (mobile only) */
+@media (max-width: 767px) {
+  .hero-name-glow {
+    text-shadow:
+      0 0 18px rgba(196, 181, 253, 1),
+      0 0 36px rgba(139, 92, 246, 1),
+      0 0 56px rgba(99, 34, 245, 0.95),
+      0 0 80px rgba(99, 34, 245, 0.7);
+  }
 }
