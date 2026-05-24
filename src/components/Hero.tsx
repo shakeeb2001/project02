@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
+import { HeroPortraitHack } from "@/components/HeroPortraitHack";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Mail, Menu, X } from "lucide-react";
 import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
@@ -157,16 +157,7 @@ export function Hero() {
               className="hero-watermark-fade translate-y-2 sm:translate-y-4 md:translate-x-12 md:translate-y-10 lg:translate-x-16 lg:translate-y-12"
               aria-hidden
             >
-              <div className="hero-watermark-dots relative h-[min(62vh,560px)] w-[min(96vw,460px)] sm:h-[min(65vh,600px)] sm:w-[min(94vw,480px)] md:h-[min(90vh,860px)] md:w-[min(60vw,640px)] lg:h-[min(94vh,940px)] lg:w-[min(58vw,720px)]">
-                <Image
-                  src="/office_profile-removebg-preview.png"
-                  alt=""
-                  fill
-                  className="object-contain object-bottom md:object-center"
-                  priority
-                  sizes="(max-width: 768px) 480px, 720px"
-                />
-              </div>
+              <HeroPortraitHack />
             </motion.div>
           </div>
 

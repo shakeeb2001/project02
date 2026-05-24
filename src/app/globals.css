@@ -99,3 +99,166 @@ body {
       0 0 80px rgba(99, 34, 245, 0.7);
   }
 }
+
+/* Hero portrait — hacker crack effect (plays once after image load) */
+@keyframes hero-hack-glitch {
+  0% {
+    transform: translate(0);
+    filter: grayscale(100%) contrast(1.7) brightness(1.75);
+  }
+  7% {
+    transform: translate(-4px, 2px) skewX(-1deg);
+    filter: grayscale(100%) contrast(2.2) brightness(2.1) hue-rotate(90deg);
+  }
+  14% {
+    transform: translate(3px, -2px) skewX(1deg);
+    clip-path: inset(22% 0 68% 0);
+  }
+  21% {
+    transform: translate(-2px, 0);
+    clip-path: inset(58% 0 28% 0);
+  }
+  28% {
+    transform: translate(5px, 1px);
+    filter: grayscale(80%) contrast(2.4) brightness(2.3) hue-rotate(-40deg);
+  }
+  35% {
+    transform: translate(0);
+    clip-path: none;
+  }
+  42% {
+    transform: translate(-3px, 3px) scale(1.005);
+    clip-path: inset(38% 0 48% 0);
+  }
+  50% {
+    transform: translate(2px, -1px);
+  }
+  100% {
+    transform: translate(0);
+    filter: grayscale(100%) contrast(1.7) brightness(1.75);
+    clip-path: none;
+  }
+}
+
+.hero-hack-glitch {
+  animation: hero-hack-glitch 0.55s steps(1) infinite;
+}
+
+.hero-hack-settled {
+  animation: none;
+}
+
+/* Fine static scanlines + single thin sweep beam */
+.hero-hack-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 4px,
+    rgba(0, 0, 0, 0.12) 4px,
+    rgba(0, 0, 0, 0.12) 5px
+  );
+}
+
+.hero-hack-scanlines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(74, 222, 128, 0.5);
+  box-shadow: 0 0 4px rgba(74, 222, 128, 0.35);
+  animation: hero-hack-scan 2.8s linear infinite;
+}
+
+@keyframes hero-hack-scan {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    top: 102%;
+    opacity: 0;
+  }
+}
+
+.hero-hack-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  animation: hero-hack-flicker 0.15s steps(2) infinite;
+}
+
+@keyframes hero-hack-flicker {
+  0%,
+  100% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.08;
+  }
+}
+
+/* Thin vertical chromatic streaks */
+.hero-hack-chromatic {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 18px,
+    rgba(74, 222, 128, 0.07) 18px,
+    rgba(74, 222, 128, 0.07) 19px,
+    transparent 19px,
+    transparent 37px,
+    rgba(99, 34, 245, 0.07) 37px,
+    rgba(99, 34, 245, 0.07) 38px
+  );
+  animation: hero-hack-chromatic-shift 0.4s steps(2) infinite;
+}
+
+@keyframes hero-hack-chromatic-shift {
+  0% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(-1px);
+  }
+}
+
+/* Thin matrix rain lines */
+.hero-hack-matrix {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    rgba(74, 222, 128, 0.14) 10px,
+    rgba(74, 222, 128, 0.14) 11px
+  );
+  opacity: 0.22;
+  animation: hero-hack-matrix-fall 1.4s linear infinite;
+}
+
+@keyframes hero-hack-matrix-fall {
+  0% {
+    background-position: 0 -120px;
+  }
+  100% {
+    background-position: 0 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-hack-glitch,
+  .hero-hack-scanlines,
+  .hero-hack-noise,
+  .hero-hack-chromatic,
+  .hero-hack-matrix {
+    animation: none !important;
+  }
+}
